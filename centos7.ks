@@ -40,5 +40,3 @@ reboot --eject
 @Base
 @Core
 %end
-
-reboot
