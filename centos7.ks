@@ -41,13 +41,4 @@ reboot --eject
 @Core
 %end
 
-%post --log=/var/log/ks.post.log
-#!/bin/bash
-set -x
-echo 'vagrant ALL=(ALL)  ALL'   >> /etc/sudoers.d/vagrant
-echo 'Defaults:root requiretty' >> /etc/sudoers.d/vagrant
-sed s/PasswordAuthentication\ yes/PasswordAuthentication\ no/ -i /etc/ssh/sshd_config
-/bin/rm -f /etc/udev/rules.d/70-persistent-net.rules
-%end
-
 reboot
